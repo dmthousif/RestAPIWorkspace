@@ -1,0 +1,42 @@
+{
+  "companyName": "TechCorp",
+  "employees": [
+    {
+      "id": "001",
+      "name": "John Doe",
+      "position": "CEO",
+      "salary": 150000,
+      "subordinates": [
+        {
+          "id": "101",
+          "name": "Alice Smith",
+          "position": "CTO",
+          "salary": 120000,
+          "subordinates": [
+            {
+              "id": "201",
+              "name": "Bob Johnson",
+              "position": "Senior Engineer",
+              "salary": 90000,
+              "subordinates": []
+            },
+            {
+              "id": "202",
+              "name": "Emily Brown",
+              "position": "Senior Engineer",
+              "salary": 90000,
+              "subordinates": []
+            }
+          ]
+        },
+        {
+          "id": "102",
+          "name": "Jane Williams",
+          "position": "CFO",
+          "salary": 110000,
+          "subordinates": []
+        }
+      ]
+    }
+  ]
+}

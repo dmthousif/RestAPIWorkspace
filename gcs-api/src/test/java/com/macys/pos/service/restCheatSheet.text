@@ -1,0 +1,75 @@
+package com.macys.pos.coreJava;
+
+public class EmptyClass {
+
+
+    ObjectMapper om = new ObjectMapper();
+    Serializatoin =========>>>
+    String JsonRequest = om.writeValueAsString(pojoclassobject);
+    De-Serializatoin =========>>>
+    MyClass deserializedObj = om.readValue(JsonResponse.String, MyClass.class);
+
+    Storing JsonResponse
+    into LinkedHashMap
+    String res = response.body().asString();
+    JsonObject jsonobj = new JsonObject(res)
+    JsonNode jsonObject = objectMapper.readTree(expRespJson);
+    Map<String, Object> map = new LinkedHashMap<>();
+map.putAll(objectMapper.convertValue(jsonObject,Map .class));
+
+    Manipulating Json ================
+
+    Response res = RestAssured.get("");
+res.jsonPath().
+
+    getString(key);
+
+
+    Using jayway====================
+    DocumentContext cont = JsonPath.parse(JsonString)
+    String value = cont.read("$.key")
+
+
+1.
+    Using JsonNode
+
+    ObjectMapper objmapr = new ObjectMapper();
+
+    JsonNode rootNode = objmapr.readTree(JsonString);
+((ObjectNode)rootNode).
+
+    put(Key, Value);
+
+    writeValueAsString(rootNode)
+
+
+2.JsonObject  --
+    not working
+
+    JsonObject jsonobj = new JsonObject(jsonString);
+jsonobj.put(key,Value);
+jsonobj.toString();
+
+
+3.JsonPath ---
+    Using jayway====================
+
+
+    private String updateJsonByPath(String jsonString, String jsonPath, String newValue) {
+        JsonPath jp = new JsonPath(jsonString);
+        jp.set(jsonPathtoFindElement, newValue);
+        return jp.prettify();
+    }
+
+    String JsonReq = new String(Files.readAllBytes(Paths.get("template.json"));
+
+
+    // convert string to JsonObject
+    JSONObject jsonObject = new JSONObject(response.toString()); //using org.json
+
+    // Accessing values from JSON object
+    String name = jsonObject.get("name").getAsString();
+}
+
+
+https://www.youtube.com/watch?v=ZjZqLUGCWxo
