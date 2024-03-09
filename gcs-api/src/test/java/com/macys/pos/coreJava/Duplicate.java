@@ -4,6 +4,26 @@ import org.junit.Test;
 
 import java.util.*;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
+class FindDuplicates {
+    public static void main(String[] args) {
+        List<Integer> listWithDuplicates = new ArrayList<>(List.of(1, 2, 3, 3, 4, 5, 5));
+        Set<Integer> uniqueElements = new HashSet<>();
+        Set<Integer> duplicateElements = new HashSet<>();
+        for (int num : listWithDuplicates) {
+            if (!uniqueElements.add(num)) {
+                duplicateElements.add(num);
+            }
+        }
+        System.out.println("Duplicate elements: " + duplicateElements);
+    }
+}
+
+
 public class Duplicate {
 
     int[] intArr = {1, 2, 3, 4, 5, 3, 2, 1, 7, 8, 9, 0};
@@ -19,7 +39,7 @@ public class Duplicate {
 
     //remove Duplicates
     @Test
-    public void countDuplicatesUsingList() {
+    public void removeDuplicatesUsingList() {
         LinkedList<Integer> linkedList = new LinkedList<>();
         for (int i : intArr) {
             if (!linkedList.contains(i)) {
@@ -27,18 +47,20 @@ public class Duplicate {
             }
         }
         System.out.println(linkedList);
-        Collections.sort(linkedList);
+        Collections.sort(linkedList);   //Collections class
         System.out.println(linkedList);
     }
+
+
     //FindDuplicate
 
     @Test
     public void findDuplicate() {
-        LinkedList<Integer> linkedList = new LinkedList<>();
+        LinkedList<Integer> linkedList1 = new LinkedList<>();
         LinkedList<Integer> linkedList2 = new LinkedList<>();
         for (int i : intArr) {
-            if (!linkedList.contains(i)) {
-                linkedList.add(i);
+            if (!linkedList1.contains(i)) {
+                linkedList1.add(i);
             } else {
                 linkedList2.add(i);
             }
@@ -46,6 +68,8 @@ public class Duplicate {
         System.out.println(linkedList2);
         Collections.sort(linkedList2);
         System.out.println(linkedList2);
+        Collections.reverse(linkedList2);
+        System.out.println("reverse"+linkedList2);
     }
 
     @Test

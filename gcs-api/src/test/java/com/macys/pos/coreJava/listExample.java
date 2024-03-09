@@ -17,8 +17,9 @@ public class listExample {
         arrlist.add("Samsung");
         arrlist.add("iPhone");
         arrlist.add("One+");
+        arrlist.get(1);
         System.out.println("BeforeReverse::" + arrlist);
-        Collections.reverse(arrlist);
+        Collections.reverse(arrlist);    // Reverse Array List
         System.out.println("AfterReverse::" + arrlist);
         Collections.reverse(arrlist);
 
@@ -41,11 +42,13 @@ public class listExample {
         list.add(11);
         list.add(22);
         list.add(33);
+        list.get(3);
 
         System.out.println(Collections.min(list));
         System.out.println(Collections.max(list));
 
         Collections.sort(list);
+        System.out.println("List::"+list);
         System.out.println("LowestNumber::"+list.get(0));
         System.out.println("HighestNumber::"+list.get(list.size()-1));
 

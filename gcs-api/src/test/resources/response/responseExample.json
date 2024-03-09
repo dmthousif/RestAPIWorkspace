@@ -1,0 +1,53 @@
+{
+  "dashboard": {
+    "purchaseAmount": 1162,
+    "totalStudentsEnrolled": 830,
+    "website": "Hello.com"
+  },
+  "courses": [
+    {
+      "title": "Selenium Python",
+      "price": 55,
+      "copies": 8,
+      "rating": 4,
+      "studentsEnrolled": 200,
+      "details": {
+        "level": "Intermediate",
+        "duration": "2 months"
+      }
+    },
+    {
+      "title": "Cypress",
+      "price": 45,
+      "copies": 5,
+      "rating": 4,
+      "studentsEnrolled": 150,
+      "details": {
+        "level": "Beginner",
+        "duration": "1 month"
+      }
+    },
+    {
+      "title": "RPA",
+      "price": 50,
+      "copies": 12,
+      "rating": 5,
+      "studentsEnrolled": 300,
+      "details": {
+        "level": "Advanced",
+        "duration": "3 months"
+      }
+    },
+    {
+      "title": "Appium",
+      "price": 40,
+      "copies": 9,
+      "rating": 4,
+      "studentsEnrolled": 180,
+      "details": {
+        "level": "Intermediate",
+        "duration": "2 months"
+      }
+    }
+  ]
+}

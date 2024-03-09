@@ -1,12 +1,11 @@
-package com.macys.pos.coreJava;
-
-
+package com.macys.pos.coreJava2;
 
 public class Singleton {
 
-    //1
+    //Declare
     private static Singleton instance;
 
+    //Declare constructor private
     private Singleton() {
 
     }
@@ -14,7 +13,7 @@ public class Singleton {
     //Lazy singleton
     public static  Singleton getInstance() {
 
-
+//if there is no object create a object
         if (instance == null)
             synchronized (Singleton.class){
                 instance = new Singleton();
@@ -27,7 +26,7 @@ public class Singleton {
 
     public static void main(String[] args) {
         Singleton.getInstance();
-        Singleton singleton = new Singleton();
+        //Singleton singleton = new Singleton();
 
     }
 

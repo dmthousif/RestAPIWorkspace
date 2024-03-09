@@ -4,7 +4,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.google.gson.JsonObject;
 import com.macys.pos.common.ConfigProperties;
 import com.macys.pos.pojos.Booking;
 import io.restassured.RestAssured;
@@ -16,6 +15,8 @@ import wiremock.com.jayway.jsonpath.JsonPath;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.HashMap;
+import java.util.Map;
 
 import static net.serenitybdd.rest.SerenityRest.rest;
 import static org.hamcrest.Matchers.containsString;
@@ -49,9 +50,8 @@ public class restUtils {
         responseSpecification.contentType("application/json; charset=utf-8");
         responseSpecification.header("Content-Type", containsString("application/json"));
         responseSpecification.header("Server", equalTo("Apache"));
-
         // Verify cookies (assuming there's a cookie named "sessionId" with value "1234567890")
-        responseSpecification.cookie("sessionId", "1234567890")
+        responseSpecification.cookie("sessionId", "1234567890");
         return responseSpecification;
     }
 
@@ -94,7 +94,7 @@ public class restUtils {
         return req;
     }
 
-    public void buildRequestBody() throws JsonProcessingException {
+    public String buildRequestBody() throws JsonProcessingException {
         Booking booking = new Booking();
         booking.setFirstname("Jim");
         booking.setLastname("Brown");
@@ -105,6 +105,7 @@ public class restUtils {
         booking.setAdditionalneeds("Breakfast");
         objectMapper = new ObjectMapper();
         req = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(booking);
+        return req;
     }
 
     public String getResponseBody(String fileName) throws IOException {
@@ -115,6 +116,25 @@ public class restUtils {
 
     public String overRideValues(String fieldName, Object value) {
         return JsonPath.parse(req).set(fieldName, value).jsonString();
+    }
+
+    public Map getHeaders() {
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put("Content-Type", "application/json");
+        headers.put("restHeaderKey1", "restHeaderValue1");
+        headers.put("restHeaderKey2", "restHeaderValue2");
+        headers.put("restHeaderKey3", "restHeaderValue3");
+        headers.put("restHeaderKey4", "restHeaderValue");
+        return headers;
+    }
+
+    public Map getCookies() {
+        Map<String, String> cookies = new HashMap<String, String>();
+        cookies.put("restkey1", "restCookie1");
+        cookies.put("restkey2", "restCookie2");
+        cookies.put("restkey3", "restCookie3");
+        cookies.put("restkey4", "restCookie4");
+        return cookies;
     }
 
 

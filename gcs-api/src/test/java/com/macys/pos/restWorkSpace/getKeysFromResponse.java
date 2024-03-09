@@ -1,16 +1,13 @@
-package com.macys.pos.service.restWorkSpace;
+package com.macys.pos.restWorkSpace;
 
-import org.checkerframework.checker.units.qual.Prefix;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.jsoup.nodes.PseudoTextElement;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.security.Key;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;

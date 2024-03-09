@@ -1,4 +1,4 @@
-package com.macys.pos.coreJava;
+package com.macys.pos.coreJava2;
 
 public class EagerSingleton {
     // Private static variable to hold the single instance of the class

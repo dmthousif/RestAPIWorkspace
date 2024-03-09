@@ -23,6 +23,7 @@ public class GetMaxofOcurances_Number {
             }
             number = number / 10;
         }
+
         System.out.print("map" + map);
     }
 }

@@ -1,4 +1,4 @@
-package com.macys.pos.service.restWorkSpace;
+package com.macys.pos.restWorkSpace;
 
 import io.restassured.response.Response;
 import lombok.extern.slf4j.Slf4j;
@@ -7,13 +7,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.junit.Test;
-import org.skyscreamer.jsonassert.JSONParser;
-import wiremock.com.jayway.jsonpath.JsonPath;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 @Slf4j
 public class WorkWithResponse {

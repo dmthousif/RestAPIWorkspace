@@ -1,9 +1,22 @@
 package com.macys.pos.coreJava;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 public class noOfCharacters {
+    public static void main(String[] args) {
+// Input value which needs to be passed in the below method.
 
+
+
+
+
+        characterCount("rahulshettyacademy");
+        characterCountUsingTraditionWay("rahulshettyacademy");
+
+    }
     static void characterCount(String inputString) {
 // Creating a hashmap object.
         HashMap<Character, Integer> map = new HashMap<>();
@@ -22,12 +35,7 @@ public class noOfCharacters {
 
     }
 
-    public static void main(String[] args) {
-// Input value which needs to be passed in the below method.
-        characterCount("rahulshettyacademy");
-        characterCountUsingTraditionWay("rahulshettyacademy");
-    
-    }
+
 
     private static void characterCountUsingTraditionWay(String str) {
 

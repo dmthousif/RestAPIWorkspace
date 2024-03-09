@@ -1,4 +1,4 @@
-package com.macys.pos.service.restWorkSpace;
+package com.macys.pos.restWorkSpace;
 
 import com.google.gson.JsonObject;
 
@@ -68,7 +68,7 @@ public class ValidateResponse {
         System.out.println("validateResponse2::" + response.body().jsonPath().getString("booking.firstname"));
         System.out.println("validateResponse3::" + response.body().jsonPath().get("booking.firstname"));
         System.out.println("validateResponse4::" + response.body().jsonPath().get("booking.bookingdates"));
-        System.out.println("validateResponse5::" + response.body().jsonPath().getString("booking.bookingdates.checkin"));
+        System.out.println("validateResponse5::" + response.then().extract().response().body().jsonPath().getString("booking.bookingdates.checkin"));
         System.out.println("validateResponse6::" + response.body().toString().contains("Jim"));
         System.out.println("validateResponse7::" + response.body().prettyPrint().contains("test"));
         System.out.println("validateResponse8::" + response.then().header("Content-Type", "application/json; charset=utf-8"));
@@ -82,16 +82,9 @@ public class ValidateResponse {
          JsonPath.parse(reqBody).set("booking.firstname", "Thousif");
 
 /*        JsonPath jp = JsonPath.parse(reqBody);
-        jp.set("booking.firstname", "Thousif");*/
+        jp.set("booking.firstname", "Thousif");
       //jp.set("key","value");
-
-
-
-
-
-
-
-        String expectedResponseBody = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/resources/response/bookBookingResponseNew.json")));
+       String expectedResponseBody = new String(Files.readAllBytes(Paths.get(System.getProperty("user.dir") + "/src/test/resources/response/bookBookingResponseNew.json")));
         expectedresjsonObject = new JSONObject(expectedResponseBody); // Using skyscreamer
 
         String resp = response.body().asString();
@@ -127,8 +120,6 @@ public class ValidateResponse {
         Assert.assertEquals(expectedresjsonObject.get(key),actualresjsonObject.get(key));*/
         System.out.println("getAllKeys::" + getAllKeys(expectedresjsonObject));
     }
-
-
     private static Set<String> getAllKeys(JSONObject jsonObject) throws JSONException {
         Set<String> keys = new HashSet<>();
         addKeys(jsonObject, "", keys);
