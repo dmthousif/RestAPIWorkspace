@@ -23,7 +23,7 @@ public class restAUTH {
                 .baseUri("https://gorest.co.in").basePath("/public/v2/users")
                 .when().get().then().log().all();
 
-        given().auth().oauth2("accessToken");
+        given().auth().oauth2("accessToken"); //Oauth
 
     }
 

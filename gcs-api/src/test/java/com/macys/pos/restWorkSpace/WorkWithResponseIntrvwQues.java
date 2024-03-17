@@ -6,6 +6,9 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.junit.Test;
 import wiremock.com.jayway.jsonpath.DocumentContext;
 import wiremock.com.jayway.jsonpath.JsonPath;
@@ -15,6 +18,28 @@ import java.util.*;
 public class WorkWithResponseIntrvwQues {
     static String responseString = "{\"dashboard\":{\"purchaseAmount\":1162,\"website\":\"Hello.com\"},\"courses\":[{\"title\":\"Selenium Python\",\"price\":50,\"copies\":6},{\"title\":\"Cypress\",\"price\":40,\"copies\":4},{\"title\":\"RPA\",\"price\":45,\"copies\":10},{\"title\":\"Appium\",\"price\":36,\"copies\":7}]}";
 
+
+    @Test
+    public void processwithOrgDotJSON() throws JSONException {
+        JSONObject jsonObject = new JSONObject("reqBody");
+        JSONObject bookingdates = jsonObject.getJSONObject("bookingdates");
+        JSONArray checkout = bookingdates.getJSONArray("checkout");
+        System.out.println("checkoutjsonArray" + checkout);
+
+        for (int i = 0; i < checkout.length(); i++) {
+            Object Value = checkout.get(i);
+            System.out.println("checkout.get("+i+")" + Value);
+            if (Value instanceof JSONObject) {
+                for (Iterator it = ((JSONObject) Value).keys(); it.hasNext(); ) {
+
+                    Object key = it.next();
+                    System.out.println("Checkout::Key::" + key
+                            + "::Value::" + ((JSONObject) Value).get(key.toString()));
+                }
+            }
+            System.out.println(Value);
+        }
+    }
     @Test
     public void processWithJackson() {
         try {
