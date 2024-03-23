@@ -97,4 +97,25 @@ public class Duplicate {
     }
 
 
+    public static void main(String[] args) {
+        int[] intArr = {1, 2, 3, 4, 5, 3, 2, 1, 7, 8, 9, 0};
+
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<Integer> duplicates = new HashSet<>();
+
+        for (int num : intArr) {
+            if (!seen.add(num)) {
+                // If number already exists in 'seen', it's a duplicate
+                duplicates.add(num);
+            }
+        }
+
+        // Print the duplicates found
+        System.out.println("Duplicates found:");
+        for (int num : duplicates) {
+            System.out.println(num);
+        }
+    }
+
+
 }

@@ -1,9 +1,12 @@
 package com.macys.pos.coreJava;
 
+import org.assertj.core.util.Arrays;
+
 public class DeleteElement
 {
 
         static int[] arr = {2, 3, 5, 3, 8, 4, 5, 3, 9};
+
         static int[] newArr = new int[arr.length];
         static int index = 0;
         static int elementToDelete = 3;
