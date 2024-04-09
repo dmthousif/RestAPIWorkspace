@@ -1,5 +1,7 @@
 package com.macys.pos.coreJava;
 
+import java.util.Iterator;
+
 public class reverseString {
 
 
@@ -18,6 +20,13 @@ public class reverseString {
         System.out.println(reverse2);
         System.out.println(sb.reverse());
         System.out.println(sbf.reverse());
+
+
+        char [] chars = str.toCharArray();
+
+        for(Iterator it = chars.iterator(); ){
+
+        }
 
     }
 
